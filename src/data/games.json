@@ -1,0 +1,10 @@
+{
+    "games": [
+        {
+            "name": "minecraft",
+            "price": 0, 
+            "category": ["stinky", "poopy"]
+        },
+        {}
+    ]
+}
