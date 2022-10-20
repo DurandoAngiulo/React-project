@@ -1,20 +1,12 @@
-import Footer from '../Footer/footer.jsx';
-import Navbar from '../Navbar/navbar.jsx';
-import BannerComp from '../BannerComp/bannerComp.jsx';
-import CatagoryButtonContainer from '../CatagoryButtonContainer/catagoryButtonContainer.jsx';
-import GameContainer from '../GameContainer/gameContainer.jsx';
+import Home from '../pages/home.jsx';
 
 
 const Layout = ({ children }) => (
   <>
   <main>
-    <Navbar />
-    <BannerComp />
-    <CatagoryButtonContainer />
-    <GameContainer />
-    {children}
+    <Home/>
   </main>
-  <Footer />
+ 
   </>  
 );
 
