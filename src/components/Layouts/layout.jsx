@@ -1,12 +1,10 @@
-import Home from '../pages/home.jsx';
+import SiteNav from '../SiteNav/sitenav.jsx'
 
 
 const Layout = ({ children }) => (
   <>
-  <main>
-    <Home/>
-  </main>
- 
+  <SiteNav />
+  {children}
   </>  
 );
 

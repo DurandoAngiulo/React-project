@@ -2,9 +2,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
-import './navbar.css';
+import './SiteNav.css';
+import LinkContainer from 'react-router-bootstrap/LinkContainer';
 
-function Navbar1() {
+function SiteNav() {
   return (
     <Navbar className='darkgrey shadow-small' expand="lg">
       <Container>
@@ -12,9 +13,9 @@ function Navbar1() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link href="#home" className="text-white fw-light">Store</Nav.Link>
+          <Nav.Link className="grey fw-light">Store</Nav.Link>
             <Nav.Link href="#link" className="grey fw-light">Browse</Nav.Link>
-            <Nav.Link href="#link" className="grey fw-light">About</Nav.Link>
+            <LinkContainer to="/game"><Nav.Link className="grey fw-light">About</Nav.Link></LinkContainer>
             <Nav.Link href="#link" className="grey fw-light">Support</Nav.Link>
           </Nav>
           <Nav>
@@ -27,4 +28,4 @@ function Navbar1() {
   );
 }
 
-export default Navbar1;
+export default SiteNav;

@@ -1,4 +1,4 @@
-import Navbar from '../Navbar/navbar.jsx';
+import Layout from '../Layouts/layout.jsx';
 import BannerComp from '../BannerComp/bannerComp.jsx';
 import GameShop from '../GameShop/gameShop.jsx';
 import Header from '../Header/header.jsx';
@@ -7,12 +7,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const Home = () => (
     <>
-    <Navbar />
+    <Layout>
     <div className = 'container'>
       <BannerComp source='./photos/hzd-landscape.jpg'/> 
       <Header white='New' red='Games'/>
       <GameShop />
-    </div>  
+    </div> 
+    </Layout>
     </>
     
 );
