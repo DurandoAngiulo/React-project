@@ -9,11 +9,11 @@ function SiteNav() {
   return (
     <Navbar className='darkgrey shadow-small' expand="lg">
       <Container>
-        <Navbar.Brand  className='fst-italic fw-semibold text-white'href="#home">Game Ne<span className="red">x</span>us</Navbar.Brand>
+      <LinkContainer to="/"><Navbar.Brand  className='fst-italic fw-semibold text-white'href="#home">Game Ne<span className="red">x</span>us</Navbar.Brand></LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link className="grey fw-light">Store</Nav.Link>
+          <LinkContainer to="/"><Nav.Link className="grey fw-light">Store</Nav.Link></LinkContainer>
             <Nav.Link href="#link" className="grey fw-light">Browse</Nav.Link>
             <LinkContainer to="/game"><Nav.Link className="grey fw-light">About</Nav.Link></LinkContainer>
             <Nav.Link href="#link" className="grey fw-light">Support</Nav.Link>

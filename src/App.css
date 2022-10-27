@@ -4,6 +4,10 @@ body {
 .darkgrey{
   background-color: #272525;
 }
+
+.background-red{
+  background-color: #E35B54;
+}
 .red{
   color: #E35B54;
 }
@@ -31,3 +35,19 @@ p{
 li{
   font-family: 'Montserrat', sans-serif;
 }
+
+.width-80{
+  width:80%;
+}
+
+.width-40{
+  width: 40%;
+}
+.width-90{
+  width:90%;
+}
+
+.margin-5{
+  margin: 0 5%;
+}
+
