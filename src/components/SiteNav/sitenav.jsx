@@ -7,7 +7,7 @@ import LinkContainer from 'react-router-bootstrap/LinkContainer';
 
 function SiteNav() {
   return (
-    <Navbar className='darkgrey shadow-small' expand="lg">
+    <Navbar className='darkgrey shadow-small' fixed="top" expand="lg">
       <Container>
       <LinkContainer to="/"><Navbar.Brand  className='fst-italic fw-semibold text-white'href="#home">Game Ne<span className="red">x</span>us</Navbar.Brand></LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
