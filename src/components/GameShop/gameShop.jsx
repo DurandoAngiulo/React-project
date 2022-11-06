@@ -1,15 +1,25 @@
 import GameCard from "../GameCard/gameCard.jsx";
-const GameShop =() => (
-   
-    <div className="container p-0  mt-5">
-        <div className="row  d-flex justify-content-center justify-content-md-between">
-        <div className="col-auto"><GameCard name='Red Dead Redemption 2'  price='$59.99' source='./photos/rdr2.jpg' /></div>
-        <div className="col-auto"><GameCard name='Red Dead Redemption 2'  price='$59.99' source='./photos/rdr2.jpg' /></div>
-        <div className="col-auto"><GameCard name='Red Dead Redemption 2'  price='$59.99' source='./photos/rdr2.jpg' /></div>
-        <div className="col-auto"><GameCard name='Red Dead Redemption 2'  price='$59.99' source='./photos/rdr2.jpg' /></div>
-        <div className="col-auto"><GameCard name='Red Dead Redemption 2'  price='$59.99' source='./photos/rdr2.jpg' /></div>       
+import { useContext, useState } from "react";
+import StateContext from "../../store.jsx";
+const GameShop = () => {
+  const state = useContext(StateContext);
+  return (
+    <div className="d-flex  justify-content-between row row-cols-md-2 row-cols-md-4 row-cols-xl-6">
+      {state.gameData.map((game) => (
+        <div className="col mx-1" key={game.name}>
+          <div className="container p-0  mt-5">
+            <div className="col-auto">
+              <GameCard
+                name={game.name}
+                price={game.price}
+                source={game.gameImage}
+                url={game.url}
+              />
+            </div>
+          </div>
         </div>
-    
+      ))}
     </div>
-)
+  );
+};
 export default GameShop;

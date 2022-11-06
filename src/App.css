@@ -1,53 +1,60 @@
 body {
-  background-color: #2E2C2C;
+  background-color: #2e2c2c;
 }
-.darkgrey{
+.darkgrey {
   background-color: #272525;
 }
 
-.background-red{
-  background-color: #E35B54;
+.background-red {
+  background-color: #e35b54;
 }
-.red{
-  color: #E35B54;
-}
-
-.grey{
-  color: #B8B5B5 !important;
+.red {
+  color: #e35b54;
 }
 
-h1{
-  font-family: 'Montserrat', sans-serif;
-}
-h2{
-  font-family: 'Montserrat', sans-serif;
-}
-h3{
-  font-family: 'Montserrat', sans-serif;
-}
-h4{
-  font-family: 'Montserrat', sans-serif;
+.grey {
+  color: #b8b5b5 !important;
 }
 
-p{
-  font-family: 'Montserrat', sans-serif;
+h1 {
+  font-family: "Montserrat", sans-serif;
 }
-li{
-  font-family: 'Montserrat', sans-serif;
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
+h4 {
+  font-family: "Montserrat", sans-serif;
 }
 
-.width-80{
+p {
+  font-family: "Montserrat", sans-serif;
+}
+li {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* .width-80{
   width:80%;
 }
 
-.width-40{
-  width: 40%;
-}
+
 .width-90{
   width:90%;
 }
 
 .margin-5{
   margin: 0 5%;
+} */
+.width-40 {
+  width: 40%;
+}
+.top-spacer {
+  margin-top: 4rem;
 }
 
+.max-width {
+  max-width: 1200px;
+}
