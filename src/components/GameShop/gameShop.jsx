@@ -4,7 +4,7 @@ import StateContext from "../../store.jsx";
 const GameShop = () => {
   const state = useContext(StateContext);
   return (
-    <div className="d-flex  justify-content-between row row-cols-md-2 row-cols-md-4 row-cols-xl-6">
+    <div className="d-flex  justify-content-between row row-cols-sm-2 row-cols-md-4 row-cols-xl-6">
       {state.gameData.map((game) => (
         <div className="col mx-1" key={game.name}>
           <div className="container p-0  mt-5">

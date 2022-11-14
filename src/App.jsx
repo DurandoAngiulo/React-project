@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import Home from "./components/pages/home.jsx";
+import Admin from "./components/pages/admin.jsx";
 import GamePage from "./components/pages/gamePage.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -13,9 +14,9 @@ function App() {
   const state = useContext(StateContext);
   // const [games, setGames] = useState([]);
   useEffect(() => {
-    const gamesArray = [];
     const q = query(collection(db, "games"));
     onSnapshot(q, (querySnapshot) => {
+      const gamesArray = [];
       querySnapshot.forEach((doc) => {
         console.log(doc.id);
         console.log(doc.data());
@@ -33,6 +34,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/game/:id" element={<GamePage />} />
       </Routes>
     </div>

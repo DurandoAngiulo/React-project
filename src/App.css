@@ -36,25 +36,19 @@ li {
   font-family: "Montserrat", sans-serif;
 }
 
-/* .width-80{
-  width:80%;
-}
-
-
-.width-90{
-  width:90%;
-}
-
-.margin-5{
-  margin: 0 5%;
-} */
 .width-40 {
   width: 40%;
 }
 .top-spacer {
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 .max-width {
   max-width: 1200px;
+}
+
+.bannerImage {
+  width: 70%;
+}
+@media only screen and (min-width: 768px) {
 }
