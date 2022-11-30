@@ -2,6 +2,7 @@
 import Home from "./components/pages/home.jsx";
 import Admin from "./components/pages/admin.jsx";
 import GamePage from "./components/pages/gamePage.jsx";
+import Cart from "./components/pages/cart.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
@@ -27,6 +28,7 @@ function App() {
         gamesArray.push(gameData);
       });
       state.setGameData(gamesArray);
+      state.initalizeCart();
     });
   }, []);
 
@@ -36,6 +38,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/game/:id" element={<GamePage />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );

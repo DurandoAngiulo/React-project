@@ -37,7 +37,11 @@ const GamePage = () => {
                 {game.price}
               </h4>
               <div className="d-flex justify-content-center justify-content-lg-start my-1">
-                <button type="button" className="btn text-white background-red">
+                <button
+                  type="button"
+                  className="btn text-white background-red"
+                  onClick={() => state.addToCart(game.name)}
+                >
                   Add to Cart
                 </button>
               </div>

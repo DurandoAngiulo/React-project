@@ -7,12 +7,20 @@ let localState = {
   setGameData: (data) => {},
   gameData: [],
   sendChanges: (product) => {},
+  userCart: [],
+  addToCart: (name) => {},
+  setUserCart: (cart) => {},
+  initalizeCart: () => {},
 };
 
 export const StateContext = createContext({
   gameData: [],
   setGameData: (data) => {},
   sendChanges: (product) => {},
+  userCart: [],
+  addToCart: (name) => {},
+  setUserCart: (cart) => {},
+  initalizeCart: () => {},
 });
 
 export const StateContextProvider = ({ children }) => {
@@ -31,13 +39,42 @@ export const StateContextProvider = ({ children }) => {
     setState({ ...localState });
   };
 
+  const setUserCart = (cart) => {
+    localState.userCart = cart;
+    setState({ ...localState });
+  };
+
+  const addToCart = (name) => {
+    const cart = localState.userCart;
+    cart.forEach((game) => {
+      if (game.name === name) game.in_cart++;
+    });
+    setUserCart(cart);
+    console.log("teteygdeydg");
+  };
+  const initalizeCart = () => {
+    const shoppingCart = localState.gameData.map((game) => ({
+      ...game,
+      in_cart: 0,
+    }));
+    setUserCart(shoppingCart);
+  };
+
   const initialState = {
     gameData: [],
     setGameData: setGameData,
     sendChanges: sendChanges,
+    userCart: [],
+    addToCart: addToCart,
+    setUserCart: setUserCart,
+    initalizeCart: initalizeCart,
   };
 
   const [state, setState] = useState(initialState);
+
+  useEffect(() => {
+    console.log(state.userCart);
+  }, [state]);
 
   return (
     <StateContext.Provider value={state}>{children}</StateContext.Provider>
