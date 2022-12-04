@@ -12,8 +12,8 @@ import StateContext from "../../store.jsx";
 function SiteNav() {
   const state = useContext(StateContext);
   return (
-    <Navbar className="darkgrey shadow-small" fixed="top" expand="lg">
-      <Container>
+    <Navbar className="darkgrey shadow-small" fixed="top" expand="sm">
+      <Container className="">
         <LinkContainer to="/">
           <Navbar.Brand
             className="fst-italic fw-semibold text-white"

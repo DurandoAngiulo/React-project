@@ -9,6 +9,8 @@ let localState = {
   sendChanges: (product) => {},
   userCart: [],
   addToCart: (name) => {},
+  removeFromCart: (name) => {},
+  removeAllFromCart: (name) => {},
   setUserCart: (cart) => {},
   initalizeCart: () => {},
 };
@@ -19,6 +21,8 @@ export const StateContext = createContext({
   sendChanges: (product) => {},
   userCart: [],
   addToCart: (name) => {},
+  removeFromCart: (name) => {},
+  removeAllFromCart: (name) => {},
   setUserCart: (cart) => {},
   initalizeCart: () => {},
 });
@@ -49,9 +53,25 @@ export const StateContextProvider = ({ children }) => {
     cart.forEach((game) => {
       if (game.name === name) game.in_cart++;
     });
+
     setUserCart(cart);
-    console.log("teteygdeydg");
   };
+  const removeFromCart = (name) => {
+    const cart = localState.userCart;
+    cart.forEach((game) => {
+      if (game.name === name) game.in_cart--;
+    });
+    setUserCart(cart);
+  };
+
+  const removeAllFromCart = (name) => {
+    const cart = localState.userCart;
+    cart.forEach((game) => {
+      if (game.name === name) game.in_cart = 0;
+    });
+    setUserCart(cart);
+  };
+
   const initalizeCart = () => {
     const shoppingCart = localState.gameData.map((game) => ({
       ...game,
@@ -66,6 +86,8 @@ export const StateContextProvider = ({ children }) => {
     sendChanges: sendChanges,
     userCart: [],
     addToCart: addToCart,
+    removeFromCart: removeFromCart,
+    removeAllFromCart: removeAllFromCart,
     setUserCart: setUserCart,
     initalizeCart: initalizeCart,
   };

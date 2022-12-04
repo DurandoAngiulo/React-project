@@ -8,6 +8,7 @@ const GamePage = () => {
   const state = useContext(StateContext);
   const { id } = useParams();
   const [game, setGameData] = useState(null);
+  const [addText, setAddText] = useState("Add to Cart");
 
   useEffect(() => {
     setGameData(state.gameData.find((game) => game.url === id));
@@ -47,13 +48,17 @@ const GamePage = () => {
               <div className="d-flex justify-content-center justify-content-lg-start top-spacer mb-1">
                 <button
                   type="button"
+                  id="liveToastBtn"
                   className="btn text-white background-red btn-danger"
                   onClick={() => {
                     state.addToCart(game.name);
-                    alert(`You've added ${game.name} to your Cart`);
+                    setAddText("Added");
+                    setTimeout(() => {
+                      setAddText("Add to Cart");
+                    }, 1000);
                   }}
                 >
-                  Add to Cart
+                  {addText}
                 </button>
               </div>
             </div>
@@ -70,6 +75,7 @@ const GamePage = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </Layout>
   );
