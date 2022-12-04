@@ -1,13 +1,21 @@
 import Layout from "../Layouts/layout.jsx";
 import "bootstrap/dist/css/bootstrap.css";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import StateContext from "../../store.jsx";
 import { useParams } from "react-router-dom";
+import Footer from "../Footer/footer.jsx";
 const GamePage = () => {
   const state = useContext(StateContext);
   const { id } = useParams();
+  const [game, setGameData] = useState(null);
 
-  const game = state.gameData.find((game) => game.url === id);
+  useEffect(() => {
+    setGameData(state.gameData.find((game) => game.url === id));
+  }, [state]);
+
+  if (!game) {
+    return "not found";
+  }
 
   return (
     <Layout>
@@ -36,11 +44,14 @@ const GamePage = () => {
               <h4 className="text-white text-center text-lg-start">
                 {game.price}
               </h4>
-              <div className="d-flex justify-content-center justify-content-lg-start my-1">
+              <div className="d-flex justify-content-center justify-content-lg-start top-spacer mb-1">
                 <button
                   type="button"
-                  className="btn text-white background-red"
-                  onClick={() => state.addToCart(game.name)}
+                  className="btn text-white background-red btn-danger"
+                  onClick={() => {
+                    state.addToCart(game.name);
+                    alert(`You've added ${game.name} to your Cart`);
+                  }}
                 >
                   Add to Cart
                 </button>
@@ -59,6 +70,7 @@ const GamePage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </Layout>
   );
 };

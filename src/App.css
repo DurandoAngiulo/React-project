@@ -15,6 +15,11 @@ body {
 .grey {
   color: #b8b5b5 !important;
 }
+.whiteLine {
+  height: 0.5px;
+  width: 100%;
+  background-color: #fff;
+}
 
 h1 {
   font-family: "Montserrat", sans-serif;

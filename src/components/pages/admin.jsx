@@ -4,6 +4,7 @@ import AdminScreen from "../AdminScreen/adminScreen.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 import { useContext, useState } from "react";
 import StateContext from "../../store.jsx";
+import Footer from "../Footer/footer.jsx";
 
 const Admin = () => {
   const state = useContext(StateContext);
@@ -15,6 +16,7 @@ const Admin = () => {
           <Header className="" white="Admin" red="Screen" />
           <AdminScreen />
         </div>
+        <Footer />
       </Layout>
     </>
   );
